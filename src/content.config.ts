@@ -58,4 +58,29 @@ const legal = defineCollection({
     }),
 });
 
-export const collections = { blog, team, legal };
+const caseStudies = defineCollection({
+    loader: glob({ base: './src/content/case-studies', pattern: '**/*.md' }),
+    schema: ({ image }) =>
+        z.object({
+            title: z.string(),
+            client: z.string(),
+            excerpt: z.string(),
+            featuredImage: image().optional(),
+            publishDate: z.string().transform((str) => new Date(str)),
+            industry: z.string(),
+            results: z.array(z.object({
+                metric: z.string(),
+                value: z.string(),
+            })),
+            publish: z.boolean().optional(),
+            seo: z
+                .object({
+                    title: z.string().optional(),
+                    description: z.string().optional(),
+                    image: z.string().optional(),
+                })
+                .optional(),
+        }),
+});
+
+export const collections = { blog, team, legal, caseStudies };

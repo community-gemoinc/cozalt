@@ -1,0 +1,122 @@
+---
+import Layout from '@layouts/Layout.astro';
+import InnerHero from '@components/sections/InnerHero.astro';
+import Button from '@components/ui/Button.astro';
+import { Linkedin, Mail } from 'lucide-astro';
+
+const seoTitle = "Founder Profile | Cozalt";
+const seoDescription = "Meet the founder of Cozalt - Expert consultant in defense and critical minerals.";
+
+const heroContent = {
+    title: "Meet the Founder",
+    description: "Experienced consultant in defense and critical minerals",
+    overlayOpacity: 0.4
+}
+
+// Profile data - UPDATE WITH ACTUAL LINKEDIN INFO
+const profile = {
+    name: "Ajay K",
+    title: "Founder & Principal Consultant",
+    bio: `With extensive experience in the defense and critical minerals sectors, I founded Cozalt to help businesses navigate complex markets and achieve their strategic objectives.
+
+My background spans business development, due diligence, and international operations across Europe, the Middle East, and the United States. I've worked with defense contractors, critical minerals companies, and venture capital firms to deliver actionable insights and measurable results.
+
+At Cozalt, we combine deep industry expertise with proprietary research methods to provide our clients with the strategic advantage they need to succeed in competitive markets.`,
+    experience: [
+        {
+            title: "Founder & Principal Consultant",
+            company: "Cozalt",
+            period: "Present",
+            description: "Leading strategic consulting engagements for defense and critical minerals clients."
+        }
+    ],
+    expertise: [
+        "Defense Industry Analysis",
+        "Critical Minerals Markets",
+        "Due Diligence",
+        "Business Development",
+        "International Expansion",
+        "Strategic Planning"
+    ],
+    linkedin: "https://www.linkedin.com/in/ajay-k-a06396160/",
+    email: "contact@cozalt.com"
+}
+---
+
+<Layout title={seoTitle} description={seoDescription}>
+    <main>
+        <InnerHero content={heroContent} />
+
+        <section class="py-base bg-background-base">
+            <div class="site-container px-4">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Profile Header -->
+                    <div class="text-center mb-12" data-aos="fade-up">
+                        <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                            <span class="text-4xl font-bold text-primary">
+                                {profile.name.split(' ').map(n => n[0]).join('')}
+                            </span>
+                        </div>
+                        <h1 class="text-3xl font-bold text-headline-base mb-2">{profile.name}</h1>
+                        <p class="text-xl text-primary">{profile.title}</p>
+
+                        <div class="flex justify-center gap-4 mt-6">
+                            <Button href={profile.linkedin} target="_blank" variant="primary">
+                                <Linkedin size={18} />
+                                LinkedIn
+                            </Button>
+                            <Button href={`mailto:${profile.email}`} variant="secondary">
+                                <Mail size={18} />
+                                Contact
+                            </Button>
+                        </div>
+                    </div>
+
+                    <!-- Bio -->
+                    <div class="prose prose-lg max-w-none mb-12" data-aos="fade-up" data-aos-delay="100">
+                        <h2 class="text-2xl font-bold text-headline-base mb-4">About</h2>
+                        {profile.bio.split('\n\n').map((paragraph) => (
+                            <p class="text-body-base mb-4">{paragraph}</p>
+                        ))}
+                    </div>
+
+                    <!-- Expertise -->
+                    <div class="mb-12" data-aos="fade-up" data-aos-delay="200">
+                        <h2 class="text-2xl font-bold text-headline-base mb-6">Areas of Expertise</h2>
+                        <div class="flex flex-wrap gap-3">
+                            {profile.expertise.map((skill) => (
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="mb-12" data-aos="fade-up" data-aos-delay="300">
+                        <h2 class="text-2xl font-bold text-headline-base mb-6">Experience</h2>
+                        <div class="space-y-6">
+                            {profile.experience.map((exp) => (
+                                <div class="p-6 bg-background-light rounded-lg border border-black/10">
+                                    <h3 class="text-xl font-semibold text-headline-base">{exp.title}</h3>
+                                    <p class="text-primary font-medium">{exp.company}</p>
+                                    <p class="text-body-base/70 text-sm mb-2">{exp.period}</p>
+                                    <p class="text-body-base">{exp.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="text-center p-8 bg-background-dark rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="text-xl font-bold text-headline-dark mb-2">Ready to Work Together?</h3>
+                        <p class="text-body-dark mb-6">Let's discuss how I can help your business succeed.</p>
+                        <Button href="/contact" variant="primary">
+                            Schedule a Consultation
+                        </Button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>

@@ -3,142 +3,116 @@ import Layout from '@layouts/Layout.astro';
 import Hero from '@components/sections/Hero.astro';
 import SplitPanel from '@components/sections/SplitPanel.astro';
 import Features from '@components/sections/Features.astro';
-import Stats from '@components/sections/Stats.astro';
 import { featureLists } from '@data/features';
-import { statsLists } from '@data/stats';
-import Logos from '@components/sections/Logos.astro';
-import { logoLists } from '@data/logos';
 import CtaBanner from '@components/sections/CtaBanner.astro';
 import Faqs from '@components/sections/Faqs.astro';
 import { faqLists } from '@data/faqs';
-import RecentPosts from '@components/sections/RecentPosts.astro';
+import Testimonials from '@components/sections/Testimonials.astro';
+import { testimonialLists } from '@data/testimonials';
+import Newsletter from '@components/sections/Newsletter.astro';
 import heroImage from '../assets/images/home/default-hero-2.jpg';
-import styleGuideImage from '../assets/images/home/developer.jpg';
+import visionImage from '../assets/images/home/developer.jpg';
 
-const seoTitle = "Modern, High-Performance Astro Theme";
-const seoDescription = "A modern, high-performance Astro theme for developer portfolios and documentation sites.";
+const seoTitle = "Expert Consulting in Defense and Critical Minerals | Cozalt";
+const seoDescription = "Cozalt provides due diligence, business development and advisory services in the defense and critical minerals space.";
 
 const heroContent = {
-    title: 'The Foundation for Beautiful Astro JS Websites',
-    description: 'Titan Core is a minimal, performance-focused Astro JS theme that serves as the perfect foundation for your next web project. Built with clean code and modern best practices, it\'s designed to be extended and customized to your specific needs.',
+    title: 'Expert Consulting in Defense and Critical Minerals',
+    description: 'Cozalt provides due diligence, business development and advisory services in the defense and critical minerals space. We empower companies to reach their full potential through strategic insights.',
     buttons: [
         {
-            text: 'Get Started',
+            text: 'Book a Consultation',
             link: '/contact',
             target: '_self'
         },
         {
-            text: 'View on GitHub',
-            link: 'https://github.com/rspisarski/titan-core',
-            target: '_blank'
+            text: 'View Case Studies',
+            link: '/case-studies',
+            target: '_self',
+            variant: 'ghostLight' as const
         }
     ],
     backgroundImage: heroImage,
-    overlayOpacity: 0.2
+    overlayOpacity: 0.5
 }
 
-const featuresSection = {
-    eyebrow: "CORE FEATURES",
-    title: "Everything You Need, Nothing You Don't",
-    description: "Titan Core gives you a solid foundation with essential features while staying lightweight and customizable. Start with a clean slate and build exactly what you need without the bloat.",
-    features: featureLists.main.features,
-    button: {
-        text: "View Theme Info",
-        link: "/theme-info",
-        variant: "primary" as const
-    }
-}
-
-const FooterCta = {
-    eyebrow: "Join The Community",
-    title: ' Start Building With Titan Core Today',
-    description: 'Titan Core is open-source and constantly improving. Join our community of developers to contribute, get support, or showcase what you\'ve built.',
-    hideCta: false,
-    button: {
-        text: 'Download Titan Core',
-        link: 'https://github.com/rspisarski/titan-core',
-        target: '_blank'
-    }
-}
-
-const styleGuideSection = {
-    eyebrow: "Design System",
-    headline: "Consistent & Beautiful Components",
-    description: "Titan Core comes with a complete style guide to ensure your projects maintain visual consistency. From typography to interactive elements, we've carefully crafted each component.",
+const aboutSection = {
+    eyebrow: "About Cozalt",
+    headline: "Strategic Insights for Defense & Critical Minerals",
+    description: "Cozalt is a specialized consulting firm focused on the defense and critical minerals sectors. We bring deep industry expertise, proprietary research methods, and an extensive network to help our clients navigate complex markets and achieve their strategic objectives.",
     image: {
-        src: styleGuideImage,
-        alt: "Featured image"
+        src: visionImage,
+        alt: "Cozalt consulting"
     },
     buttons: [
         {
-            text: "Explore Style Guide",
-            link: "/style-guide",
+            text: "Learn More",
+            link: "/profile",
             variant: "primary" as const
         }
     ]
 }
 
-const sideBySideStats = {
-    eyebrow: "Stats",
-    title: "Built for Speed and Flexibility",
-    description: "Titan Core is designed with performance and developer experience in mind. Our lightweight theme gives you all the essentials without the bloat, letting you build exactly what you need with impressive speed.",
-    variant: 'side-by-side' as const,
-    stats: statsLists.withContent.stats,
-    content: {
-        title: "Built for Speed and Flexibility",
-        description: "Titan Core is designed with performance and developer experience in mind. Our lightweight theme gives you all the essentials without the bloat, letting you build exactly what you need with impressive speed.",
-        button: {
-            text: "Discover Titan Core",
-            link: "/theme-info",
-            variant: "primary" as const
-        }
-    }
-};
+const visionSection = {
+    eyebrow: "Our Vision",
+    title: "Empowering Defense & Critical Minerals Businesses",
+    description: "At Cozalt, we envision a world where defense and critical minerals businesses thrive through strategic insights. Our consulting services are designed to empower companies to reach their full potential and navigate the complexities of these vital industries.",
+}
 
-const mainCta = {
-    eyebrow: "Build Blocks",
-    title: "Ready-to-Use Components",
-    description: "Save development time with our pre-built, accessible components. Each one is designed to integrate seamlessly with your projects while maintaining excellent performance.",
+const servicesSection = {
+    eyebrow: "Our Services",
+    title: "Comprehensive Consulting Solutions",
+    description: "We offer a full range of consulting services tailored to the unique needs of defense contractors, critical minerals companies, and investors in these sectors.",
+    features: featureLists.main.features,
     button: {
-        text: "View All Components",
-        link: "/components",
-        variant: "primary" as const,
-        target: "_self" as const
+        text: "Contact Us",
+        link: "/contact",
+        variant: "primary" as const
     }
-};
+}
 
-
-const logosSection = {
-    eyebrow: "Our Clients",
-    logos: logoLists.main.logos
+const testimonialsSection = {
+    eyebrow: "Testimonials",
+    title: "What Our Clients Say",
+    description: "Discover how we've helped defense and critical minerals companies achieve their goals.",
+    testimonials: testimonialLists.main.testimonials
 }
 
 const faqsSection = {
     eyebrow: "FAQs",
     title: 'Frequently Asked Questions',
-    description: 'Find answers to common questions about our platform and services.',
+    description: 'Find answers to common questions about our consulting services.',
     faqs: faqLists.main.faqs
 }
 
-const recentPostsSection = {
-    eyebrow: "LATEST INSIGHTS",
-    title: " Learn From Our Experience",
-    description: "Explore our latest articles on Astro JS development, theme customization tips, and web performance best practices.",
+const newsletterSection = {
+    eyebrow: "Stay Informed",
+    title: "Subscribe to Our Newsletter",
+    description: "Get the latest insights on defense and critical minerals markets delivered to your inbox.",
+    placeholder: "Enter your email address",
+    buttonText: "Subscribe",
+    disclaimer: "We respect your privacy. Unsubscribe at any time."
+}
+
+const FooterCta = {
+    eyebrow: "Ready to Get Started?",
+    title: 'Let\'s Discuss Your Strategic Needs',
+    description: 'Whether you need due diligence support, business development services, or strategic advisory, Cozalt is here to help you succeed.',
+    hideCta: false,
     button: {
-            text: "View All Posts",
-            link: "/blog",
-        variant: "primary" as const
+        text: 'Contact Us',
+        link: '/contact',
+        target: '_self'
     }
 }
 ---
 
 <Layout footerCta={FooterCta} title={seoTitle} description={seoDescription}>
     <Hero content={heroContent} />
-    <Features content={featuresSection} padding="base" background="light" />
-    <RecentPosts content={recentPostsSection} background="base" padding="base" postsToShow={3} category="Theme Usage"/>
-    <SplitPanel content={styleGuideSection} imagePosition="right" background="light" padding="base" />
-    <CtaBanner content={mainCta} variant="contained" background="light" paddingBottom="base" />
-    <Logos content={logosSection} background="base" padding='small'/>
-    <Stats content={sideBySideStats} background='dark' padding="base"/>
-    <Faqs content={faqsSection} background="base" padding="base" />
+    <SplitPanel content={aboutSection} imagePosition="right" background="light" padding="base" />
+    <CtaBanner content={visionSection} variant="full-width" background="dark" padding="base" />
+    <Features content={servicesSection} padding="base" background="light" />
+    <Testimonials content={testimonialsSection} background="base" padding="base" />
+    <Faqs content={faqsSection} background="light" padding="base" />
+    <Newsletter content={newsletterSection} background="dark" padding="base" />
 </Layout>

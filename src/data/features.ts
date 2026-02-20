@@ -1,7 +1,7 @@
-import { Zap, Shield, Heart, Coffee, Smile, Type, TabletSmartphone, CodeXml } from 'lucide-astro';
+import { TrendingUp, Search, Handshake, Globe } from 'lucide-astro';
 
 // Define the LucideIcon type based on the structure of Lucide icons
-type LucideIcon = typeof Zap;
+type LucideIcon = typeof TrendingUp;
 
 export interface Feature {
     icon: LucideIcon;
@@ -14,60 +14,30 @@ export interface FeatureList {
     features: Feature[];
 }
 
-// Example feature lists
+// Cozalt services
 export const featureLists: Record<string, FeatureList> = {
     main: {
         id: 'main',
         features: [
             {
-                icon: Zap,
-                title: 'Lightning Fast Performance',
-                description: 'Optimized for speed and performance'
+                icon: TrendingUp,
+                title: 'Business Strategy Consulting',
+                description: 'We assist small defense-focused businesses in developing growth strategies by analyzing strengths, weaknesses, opportunities, and threats to create customized business plans.'
             },
             {
-                icon: Shield,
-                title: 'SEO Optimized Structure',
-                description: 'Built with SEO best practices in mind'
+                icon: Search,
+                title: 'Due Diligence',
+                description: 'We support venture capital and debt firms in evaluating defense startups and investment targets using proprietary research methods and industry expertise.'
             },
             {
-                icon: TabletSmartphone,
-                title: 'Responsive by Default',
-                description: 'Mobile-friendly out of the box'
+                icon: Handshake,
+                title: 'Business Development',
+                description: 'We offer affordable BD services for small defense firms lacking resources for full-time professionals, providing process optimization and network access.'
             },
             {
-                icon: Smile,
-                title: 'Easy Customization',
-                description: 'Customize the theme to your liking'
-            },
-            {
-                icon: Type,
-                title: 'TypeScript Support',
-                description: 'Built with TypeScript in mind'
-            },
-            {
-                icon: CodeXml,
-                title: 'Minimal Dependencies',
-                description: 'Keep your project lightweight'
-            }
-        ]
-    },
-    secondary: {
-        id: 'secondary',
-        features: [
-            {
-                icon: Heart,
-                title: 'Made with Love',
-                description: 'Crafted with attention to detail'
-            },
-            {
-                icon: Coffee,
-                title: 'Always Fresh',
-                description: 'Regular updates and improvements'
-            },
-            {
-                icon: Smile,
-                title: 'User Friendly',
-                description: 'Intuitive and easy to use'
+                icon: Globe,
+                title: 'International Expansion',
+                description: 'We provide expertise for global operations setup, leveraging experience across Europe, Middle East, and U.S. markets.'
             }
         ]
     }

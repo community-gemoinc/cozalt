@@ -1,0 +1,105 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '@layouts/Layout.astro';
+import Date from '@components/ui/Date.astro';
+import { Image } from 'astro:assets';
+import Button from '@components/ui/Button.astro';
+import { ArrowLeft } from 'lucide-astro';
+
+export async function getStaticPaths() {
+    const caseStudies = await getCollection('caseStudies');
+    return caseStudies.map((study) => ({
+        params: { slug: study.id },
+        props: { study },
+    }));
+}
+
+const { study } = Astro.props;
+const { Content } = await render(study);
+
+const seoTitle = study.data.seo?.title || `${study.data.title} | Cozalt`;
+const seoDescription = study.data.seo?.description || study.data.excerpt;
+
+let seoImage: string | undefined = study.data.seo?.image;
+
+if (seoImage && !seoImage.startsWith('http')) {
+    const siteUrl = import.meta.env.SITE || 'https://cozalt.com';
+    seoImage = new URL(seoImage.startsWith('/') ? seoImage : `/${seoImage}`, siteUrl).toString();
+} else if (!seoImage && study.data.featuredImage) {
+    const siteUrl = import.meta.env.SITE || 'https://cozalt.com';
+    seoImage = new URL(study.data.featuredImage.src, siteUrl).toString();
+}
+---
+
+<Layout title={seoTitle} description={seoDescription} image={seoImage}>
+    <div class="w-full h-120 absolute top-0 left-0 z-0 overflow-hidden border-b border-black">
+        {study.data.featuredImage && (
+            <>
+                <Image
+                    src={study.data.featuredImage}
+                    alt=""
+                    width={1920}
+                    height={1080}
+                    class="w-full h-full object-cover grayscale opacity-20"
+                    quality={60}
+                />
+                <div class="absolute inset-0 bg-primary/10 backdrop-blur-md" />
+            </>
+        )}
+    </div>
+
+    <article class="site-container--small mx-auto px-4 prose relative z-10 pb-base">
+        <div class="mt-42 mb-8">
+            <Button href="/case-studies" variant="ghostDark" class="mb-6">
+                <ArrowLeft size={16} />
+                Back to Case Studies
+            </Button>
+
+            <div class="flex items-center gap-2 text-sm text-body-base/70 mb-4">
+                <span class="px-2 py-1 bg-primary/10 text-primary rounded text-xs font-medium">
+                    {study.data.industry}
+                </span>
+                <span>|</span>
+                <span>Client: {study.data.client}</span>
+                <span>|</span>
+                <Date date={study.data.publishDate} />
+            </div>
+
+            <h1 class="mb-6">{study.data.title}</h1>
+
+            <!-- Results Summary -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-6 bg-background-light rounded-lg border border-black/10 mb-8 not-prose">
+                {study.data.results.map((result) => (
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary">{result.value}</div>
+                        <div class="text-sm text-body-base/70">{result.metric}</div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        {study.data.featuredImage && (
+            <Image
+                src={study.data.featuredImage}
+                alt=""
+                width={1200}
+                height={675}
+                class="w-full h-auto rounded-lg border mb-12 border-black"
+                quality={80}
+                format="webp"
+            />
+        )}
+
+        <div class="mt-8">
+            <Content />
+        </div>
+
+        <div class="mt-12 p-6 bg-background-dark rounded-lg text-center not-prose">
+            <h3 class="text-xl font-semibold text-headline-dark mb-2">Ready to achieve similar results?</h3>
+            <p class="text-body-dark mb-4">Let's discuss how Cozalt can help your business.</p>
+            <Button href="/contact" variant="primary">
+                Contact Us
+            </Button>
+        </div>
+    </article>
+</Layout>

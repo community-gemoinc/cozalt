@@ -1,0 +1,71 @@
+---
+import type { Testimonial } from '@data/testimonials';
+import { getPaddingClass, getBackgroundColor, getHeadlineColor, getTextColor } from '@utils/styleUtils';
+import type { PaddingSize, ThemeColor } from '@utils/styleUtils';
+import Eyebrow from '@components/ui/Eyebrow.astro';
+import { Quote } from 'lucide-astro';
+
+export interface Props {
+    content: {
+        eyebrow?: string;
+        title?: string;
+        description?: string;
+        testimonials: Testimonial[];
+    };
+    background?: ThemeColor;
+    padding?: PaddingSize;
+    paddingTop?: PaddingSize;
+    paddingBottom?: PaddingSize;
+}
+
+const {
+    content: { eyebrow, title, description, testimonials },
+    background = 'base'
+} = Astro.props;
+
+const bgColor = getBackgroundColor(background);
+const paddingClass = getPaddingClass({
+    padding: Astro.props.padding,
+    paddingTop: Astro.props.paddingTop,
+    paddingBottom: Astro.props.paddingBottom
+});
+
+const headlineColor = getHeadlineColor(background);
+const textColor = getTextColor(background);
+---
+
+<section class:list={["relative", bgColor, paddingClass]}>
+    <div class="site-container px-4">
+        {(title || description) && (
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                {eyebrow && (
+                    <Eyebrow
+                        text={eyebrow}
+                        background={background}
+                    />
+                )}
+                {title && <h2 data-aos="fade-up" class:list={["text-3xl font-bold mb-4", headlineColor]}>{title}</h2>}
+                {description && <p data-aos="fade-up" class:list={["text-lg", textColor]}>{description}</p>}
+            </div>
+        )}
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map(({ quote, name, title: jobTitle, company }, index) => (
+                <div
+                    class="p-6 rounded-lg border border-black/10 bg-background-light"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                >
+                    <Quote size={32} class="text-primary mb-4 opacity-50" />
+                    <blockquote class:list={["text-base mb-6", textColor]}>
+                        "{quote}"
+                    </blockquote>
+                    <div class="border-t border-black/10 pt-4">
+                        <p class:list={["font-semibold", headlineColor]}>{name}</p>
+                        <p class:list={["text-sm", textColor]}>{jobTitle}, {company}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
