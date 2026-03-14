@@ -15,22 +15,22 @@ export const testimonialLists: Record<string, TestimonialList> = {
         id: 'main',
         testimonials: [
             {
-                quote: "Cozalt's strategic insights helped us navigate a complex acquisition in the defense sector. Their due diligence was thorough and their recommendations were spot-on.",
-                name: "Sarah Mitchell",
-                title: "Managing Partner",
-                company: "Apex Ventures"
+                quote: "Cozalt helped us in due diligence of four of our investments in the defense space.",
+                name: "Nihal Choubey",
+                title: "Expert Insights",
+                company: "VC Investor"
             },
             {
-                quote: "Working with Cozalt on our international expansion was a game-changer. Their expertise in European and Middle Eastern markets saved us months of trial and error.",
-                name: "James Rodriguez",
-                title: "CEO",
-                company: "DefenseTech Solutions"
+                quote: "Cozalt and its consultants were extremely helpful during our due diligence phase as VC investors.",
+                name: "Sakshi Malpani",
+                title: "Top Notch Service",
+                company: "VC Investor"
             },
             {
-                quote: "As a small defense contractor, we couldn't afford a full-time BD team. Cozalt filled that gap perfectly, helping us win contracts we never thought possible.",
-                name: "Michael Chen",
-                title: "Founder",
-                company: "Tactical Systems Inc."
+                quote: "Ajay and his team have helped us expand our business in India and Europe. For the same quality of service we would have had to pay much more had we gone with any other consulting firm. Totally recommended!",
+                name: "Sreenath Mallikarjunan",
+                title: "Business Expansion",
+                company: "International Client"
             }
         ]
     }

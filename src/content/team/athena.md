@@ -6,7 +6,7 @@ publish: true
 order: 5
 linkedin: "https://www.linkedin.com/in/athena/"
 linkedinUsername: "athena"
-email: "athena@titan-core.com"
+email: "athena@cozalt.com"
 xSocial: "https://x.com/athena"
 xSocialUsername: "athena"
 ---

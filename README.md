@@ -1,9 +1,7 @@
-# Titan Core - Modern Astro Theme
+# Cozalt - Modern Astro Theme
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-**Titan Core** is a high-performance, feature-rich theme for Astro JS, designed for modern websites, blogs, and portfolios. With beautiful UI components, multiple theme options, and a focus on performance, Titan Core helps you build stunning websites quickly.
-
-[Live Demo](https://titan-core.netlify.app)
+**Cozalt** is a high-performance, feature-rich theme for Astro JS, designed for modern websites, blogs, and portfolios. With beautiful UI components, multiple theme options, and a focus on performance, Cozalt helps you build stunning websites quickly.
 
 ## ✨ Features
 
@@ -25,12 +23,9 @@
 ## 🚀 Quick Start
 
 ```bash
-# Create a new project with this theme
-npm create astro@latest -- --template rspisarski/titan-core
-
-# or clone this repository
-git clone https://github.com/rspisarski/titan-core.git my-website
-cd my-website
+# Clone this repository
+git clone https://github.com/GemoInc/cozalt.git
+cd cozalt
 npm install
 npm run dev
 ```
@@ -73,7 +68,7 @@ Customize your site by editing the configuration files in the `src/data/` direct
 
 ## 🎨 Theming
 
-Titan Core comes with 10 beautiful pre-configured themes inspired by Greek mythology. Developers can choose a single theme for their site by editing the `themeSetting` object in `src/data/config.ts`:
+Cozalt comes with 10 beautiful pre-configured themes inspired by Greek mythology. Developers can choose a single theme for their site by editing the `themeSetting` object in `src/data/config.ts`:
 
 ```typescript
 export const themeSetting = {
@@ -96,7 +91,7 @@ export const themeSetting = {
 
 ### Removing the Theme Switcher
 
-By default, Titan Core includes a theme switcher component that allows users to change themes. For projects where you want to use a single consistent theme, you can remove the theme switcher by:
+By default, Cozalt includes a theme switcher component that allows users to change themes. For projects where you want to use a single consistent theme, you can remove the theme switcher by:
 
 1. Open `src/layouts/Layout.astro`
 2. Remove or comment out the ThemeSwitcher import:
@@ -127,11 +122,11 @@ This will ensure your site uses only the theme specified in your configuration.
 
 ## 📝 Content Management
 
-Titan Core uses Astro's content collections for blog posts and other content. Add your content to the `src/content/` directory.
+Cozalt uses Astro's content collections for blog posts and other content. Add your content to the `src/content/` directory.
 
 ## 🧩 Components
 
-Titan Core includes a wide range of components:
+Cozalt includes a wide range of components:
 
 - **Layout Components**: Hero, Features, Split Panel, CTA Banner, etc.
 - **UI Components**: Buttons, Forms, Cards, etc.

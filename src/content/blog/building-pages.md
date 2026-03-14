@@ -1,22 +1,22 @@
 ---
-title: "Building pages with Titan Core components"
-excerpt: "Learn how to build pages with Titan Core components"
+title: "Building pages with Cozalt components"
+excerpt: "Learn how to build pages with Cozalt components"
 featuredImage: "./images/building-pages.jpg"
 publishDate: "2025-02-22"
 publish: true
 categories: ["Theme Usage"]
 
 seo:
-  title: "How to build pages with Titan Core components"
-  description: "Learn how to build pages with Titan Core components"
+  title: "How to build pages with Cozalt components"
+  description: "Learn how to build pages with Cozalt components"
   image: "./images/building-pages.jpg"
 ---
 
-## Titan Core Components
+## Cozalt Components
 
-Titan Core components are a set of components that are used to build pages. They are a collection of components that are used to build pages.
+Cozalt components are a set of components that are used to build pages. They are a collection of components that are used to build pages.
 
-## List of Titan Core Page Components
+## List of Cozalt Page Components
 
 - components/sections/Faqs.astro
 - components/sections/CtaBanner.astro
@@ -24,13 +24,13 @@ Titan Core components are a set of components that are used to build pages. They
 - components/sections/SplitPanel.astro
 - components/sections/Stats.astro
 
-## How to use Titan Core components
+## How to use Cozalt components
 
-To use a Titan Core component, you need to import the component into your page.
+To use a Cozalt component, you need to import the component into your page.
 
 ```javascript
 ---
-import { SplitPanel } from "@titan-core/components";
+import { SplitPanel } from "@cozalt/components";
 ---
 ```
 
@@ -39,7 +39,7 @@ After importing the component, create a new `const` object that contains the dat
 ```javascript
 const aboutSection = {
     eyebrow: "About",
-    headline: "About Titan Core",
+    headline: "About Cozalt",
     subheadline: "We are a team of developers who are passionate about building amazing websites with ease.",
     description: "Our platform is designed to help developers and agencies build amazing websites with ease. Packed with features and optimized for performance.",
     image: {

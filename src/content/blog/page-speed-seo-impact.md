@@ -73,9 +73,9 @@ Every second counts when it comes to conversions:
 
 With mobile searches accounting for over 60% of all searches, Google's mobile-first indexing makes mobile page speed even more critical for SEO success.
 
-## How Titan Core Themes Optimizes for Speed
+## How Cozalt Themes Optimizes for Speed
 
-At Titan Studio Themes, we've built speed optimization into the DNA of our Astro-powered themes:
+At Cozalt, we've built speed optimization into the DNA of our Astro-powered themes:
 
 - **Minimal JavaScript**: Our themes use partial hydration to load only the JavaScript that's needed
 - **Image Optimization**: Automatic responsive images with lazy loading
@@ -85,7 +85,7 @@ At Titan Studio Themes, we've built speed optimization into the DNA of our Astro
 
 ## Practical Steps to Improve Page Speed for SEO
 
-If you're using our Titan Core theme (or any of our specialized themes), you're already ahead of the game. But here are additional steps you can take:
+If you're using our Cozalt theme (or any of our specialized themes), you're already ahead of the game. But here are additional steps you can take:
 
 1. **Optimize images**: Compress and properly size all images
 2. **Minimize third-party scripts**: Each external script adds loading time
@@ -99,6 +99,6 @@ As mobile internet usage continues to grow and user expectations for instant exp
 
 ## Conclusion
 
-In the competitive world of search rankings, page speed has evolved from a nice-to-have feature to a must-have foundation. By prioritizing performance with solutions like our Titan Core theme, you're not just improving technical metrics—you're boosting your visibility, enhancing user experience, and ultimately driving more conversions.
+In the competitive world of search rankings, page speed has evolved from a nice-to-have feature to a must-have foundation. By prioritizing performance with solutions like our Cozalt theme, you're not just improving technical metrics—you're boosting your visibility, enhancing user experience, and ultimately driving more conversions.
 
 Our upcoming specialized themes for agencies, portfolios, and marketing sites are all built with this speed-first philosophy, ensuring your SEO performance is optimized from day one. 

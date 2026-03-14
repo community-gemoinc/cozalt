@@ -6,7 +6,7 @@ publish: true
 order: 1
 linkedin: "https://www.linkedin.com/in/zeus/"
 linkedinUsername: "zeus"
-email: "zeus@titan-core.com"
+email: "zeus@cozalt.com"
 xSocial: "https://x.com/zeus"
 xSocialUsername: "zeus"
 github: "https://github.com/zeus"

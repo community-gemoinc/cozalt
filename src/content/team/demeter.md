@@ -6,7 +6,7 @@ publish: true
 order: 6
 linkedin: "https://www.linkedin.com/in/demeter/"
 linkedinUsername: "demeter"
-email: "demeter@titan-core.com"
+email: "demeter@cozalt.com"
 xSocial: "https://x.com/demeter"
 xSocialUsername: "demeter"
 ---

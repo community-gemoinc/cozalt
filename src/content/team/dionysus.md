@@ -6,7 +6,7 @@ publish: true
 order: 7
 linkedin: "https://www.linkedin.com/in/dionysus/"
 linkedinUsername: "dionysus"
-email: "dionysus@titan-core.com"
+email: "dionysus@cozalt.com"
 xSocial: "https://x.com/dionysus"
 xSocialUsername: "dionysus"
 ---

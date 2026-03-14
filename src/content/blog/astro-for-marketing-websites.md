@@ -58,9 +58,9 @@ The technical advantages of Astro translate directly to marketing outcomes:
 - **Better Ad Performance**: Paid traffic converts better on optimized sites
 - **Enhanced Analytics**: Cleaner implementation of tracking and measurement tools
 
-## How Titan Studio Themes Leverages Astro
+## How Cozalt Leverages Astro
 
-At Titan Studio Themes, we've built our entire theme ecosystem on Astro's powerful foundation. Our Titan Core theme demonstrates how Astro's capabilities translate into marketing-ready features:
+At Cozalt, we've built our entire theme ecosystem on Astro's powerful foundation. Our Cozalt theme demonstrates how Astro's capabilities translate into marketing-ready features:
 
 - **Conversion-Optimized Components**: Call-to-action sections, testimonials, and feature highlights designed for maximum impact
 - **Performance-First Design**: Every theme element optimized for Core Web Vitals
@@ -71,7 +71,7 @@ At Titan Studio Themes, we've built our entire theme ecosystem on Astro's powerf
 
 Ready to build your next marketing site with Astro? Here are some steps to get started:
 
-1. Explore our Titan Core theme as your foundation
+1. Explore our Cozalt theme as your foundation
 2. Identify the key marketing sections your site needs
 3. Customize the content to match your brand voice
 4. Deploy with your preferred hosting provider
@@ -80,4 +80,4 @@ Ready to build your next marketing site with Astro? Here are some steps to get s
 
 The days of compromising between marketing effectiveness and technical excellence are over. Astro JS provides the perfect foundation for modern marketing websites that are fast, discoverable, and conversion-focused.
 
-Our upcoming specialized themes for agencies, portfolios, and marketing sites will showcase even more ways Astro can power your digital presence. Stay tuned as we continue to expand the Titan Studio Themes collection with marketing-optimized designs built on the Astro foundation. 
+Our upcoming specialized themes for agencies, portfolios, and marketing sites will showcase even more ways Astro can power your digital presence. Stay tuned as we continue to expand the Cozalt collection with marketing-optimized designs built on the Astro foundation. 

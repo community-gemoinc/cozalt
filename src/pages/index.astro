@@ -9,9 +9,11 @@ import Faqs from '@components/sections/Faqs.astro';
 import { faqLists } from '@data/faqs';
 import Testimonials from '@components/sections/Testimonials.astro';
 import { testimonialLists } from '@data/testimonials';
+import Logos from '@components/sections/Logos.astro';
+import { logoLists } from '@data/logos';
 import Newsletter from '@components/sections/Newsletter.astro';
 import heroImage from '../assets/images/home/default-hero-2.jpg';
-import visionImage from '../assets/images/home/developer.jpg';
+import visionImage from '../assets/images/home/osprey-large.jpg';
 
 const seoTitle = "Expert Consulting in Defense and Critical Minerals | Cozalt";
 const seoDescription = "Cozalt provides due diligence, business development and advisory services in the defense and critical minerals space.";
@@ -21,9 +23,9 @@ const heroContent = {
     description: 'Cozalt provides due diligence, business development and advisory services in the defense and critical minerals space. We empower companies to reach their full potential through strategic insights.',
     buttons: [
         {
-            text: 'Book a Consultation',
-            link: '/contact',
-            target: '_self'
+            text: 'Book a Call',
+            link: 'https://cal.com',
+            target: '_blank'
         },
         {
             text: 'View Case Studies',
@@ -33,7 +35,7 @@ const heroContent = {
         }
     ],
     backgroundImage: heroImage,
-    overlayOpacity: 0.5
+    overlayOpacity: 0.65
 }
 
 const aboutSection = {
@@ -71,9 +73,14 @@ const servicesSection = {
     }
 }
 
+const clientsSection = {
+    eyebrow: "Our Clients",
+    logos: logoLists.main.logos
+}
+
 const testimonialsSection = {
     eyebrow: "Testimonials",
-    title: "What Our Clients Say",
+    title: "Discover What Our Clients Love",
     description: "Discover how we've helped defense and critical minerals companies achieve their goals.",
     testimonials: testimonialLists.main.testimonials
 }
@@ -88,7 +95,7 @@ const faqsSection = {
 const newsletterSection = {
     eyebrow: "Stay Informed",
     title: "Subscribe to Our Newsletter",
-    description: "Get the latest insights on defense and critical minerals markets delivered to your inbox.",
+    description: "Get the latest insights on defense and critical minerals markets delivered to your inbox. Plus, get 10% off your first purchase!",
     placeholder: "Enter your email address",
     buttonText: "Subscribe",
     disclaimer: "We respect your privacy. Unsubscribe at any time."
@@ -100,9 +107,9 @@ const FooterCta = {
     description: 'Whether you need due diligence support, business development services, or strategic advisory, Cozalt is here to help you succeed.',
     hideCta: false,
     button: {
-        text: 'Contact Us',
-        link: '/contact',
-        target: '_self'
+        text: 'Book a Call',
+        link: 'https://cal.com',
+        target: '_blank'
     }
 }
 ---
@@ -112,6 +119,7 @@ const FooterCta = {
     <SplitPanel content={aboutSection} imagePosition="right" background="light" padding="base" />
     <CtaBanner content={visionSection} variant="full-width" background="dark" padding="base" />
     <Features content={servicesSection} padding="base" background="light" />
+    <Logos content={clientsSection} background="dark" padding="base" />
     <Testimonials content={testimonialsSection} background="base" padding="base" />
     <Faqs content={faqsSection} background="light" padding="base" />
     <Newsletter content={newsletterSection} background="dark" padding="base" />

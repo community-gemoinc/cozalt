@@ -6,7 +6,7 @@ publish: true
 order: 10
 linkedin: "https://www.linkedin.com/in/poseidon/"
 linkedinUsername: "poseidon"
-email: "poseidon@titan-core.com"
+email: "poseidon@cozalt.com"
 xSocial: "https://x.com/poseidon"
 xSocialUsername: "poseidon"
 ---

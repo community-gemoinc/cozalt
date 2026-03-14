@@ -2,6 +2,7 @@
 import type { Feature } from '@data/features';
 import Button from '@components/ui/Button.astro';
 import Eyebrow from '@components/ui/Eyebrow.astro';
+import { Image } from 'astro:assets';
 import { getPaddingClass, getBackgroundColor, getTextColor } from '@utils/styleUtils';
 import type { PaddingSize, ThemeColor } from '@utils/styleUtils';
 
@@ -76,32 +77,38 @@ const paddingClass = getPaddingClass({
             </div>
         )}
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-auto-fit gap-8 auto-rows-fr">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-                <div 
+                <div
                     class:list={[
-                        "p-6 rounded-lg border border-black",
+                        "rounded-lg overflow-hidden",
                         background === 'dark' ? 'bg-background-base/10' : 'bg-background/90',
                         "flex flex-col"
                     ]}
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                 >
-                    <div class:list={[
-                        "w-12 h-12 flex items-center justify-center rounded-lg mb-4",
-                        "bg-primary"
-                    ]}>
-                        <feature.icon
-                            size={24}
-                            class="text-white"
-                        />
+                    {feature.image && (
+                        <div class="w-full h-48 overflow-hidden">
+                            <Image
+                                src={feature.image}
+                                alt={feature.title}
+                                width={400}
+                                height={300}
+                                class="w-full h-full object-cover"
+                                quality={80}
+                                format="webp"
+                            />
+                        </div>
+                    )}
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class:list={["text-h4 mb-4 text-center", textColor]}>
+                            {feature.title}
+                        </h3>
+                        <p class:list={["text-base", textColor, "opacity-90", "text-center"]}>
+                            {feature.description}
+                        </p>
                     </div>
-                    <h3 class:list={["text-h4 mb-2", textColor]}>
-                        {feature.title}
-                    </h3>
-                    <p class:list={["text-base", textColor, "opacity-90"]}>
-                        {feature.description}
-                    </p>
                 </div>
             ))}
         </div>

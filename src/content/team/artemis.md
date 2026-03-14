@@ -6,7 +6,7 @@ publish: true
 order: 4
 linkedin: "https://www.linkedin.com/in/artemis/"
 linkedinUsername: "artemis"
-email: "artemis@titan-core.com"
+email: "artemis@cozalt.com"
 xSocial: "https://x.com/artemis"
 xSocialUsername: "artemis"
 ---

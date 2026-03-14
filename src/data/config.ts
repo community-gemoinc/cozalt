@@ -6,7 +6,7 @@ export const siteConfig = {
       Github: '',
       Instagram: '',
       LinkedIn: 'https://www.linkedin.com/in/ajay-k-a06396160/',
-      Email: 'contact@cozalt.com',
+      Email: 'ajaykrishnan.office@gmail.com',
       Phone: '',
       Location: '',
   }

@@ -40,6 +40,7 @@ const headlineColor = getHeadlineColor(background);
 const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
 const inputBgClass = getInputBackgroundColor(background);
 const inputTextClass = getInputTextColor(background);
+const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycby5CQrR51LAMOkebTvnX5kRIzUymOhUYEha1GNiO6if_67chFuZ9uTHywy2az28HkUY/exec";
 ---
 
 <section class:list={[bgColor, paddingClass]}>
@@ -69,7 +70,10 @@ const inputTextClass = getInputTextColor(background);
                 </p>
             )}
 
+            <div id="newsletter-message" class="hidden mt-4 p-4 rounded-lg"></div>
+
             <form
+                id="newsletter-form"
                 class="mt-8 flex flex-col sm:flex-row gap-4 justify-center"
                 data-aos="fade-up"
                 data-aos-delay="200"
@@ -77,6 +81,7 @@ const inputTextClass = getInputTextColor(background);
                 <input
                     type="email"
                     name="email"
+                    id="newsletter-email"
                     placeholder={placeholder}
                     required
                     class:list={[
@@ -110,3 +115,60 @@ const inputTextClass = getInputTextColor(background);
         </div>
     </div>
 </section>
+
+<script define:vars={{ GOOGLE_SHEETS_URL }}>
+    const newsletterForm = document.getElementById('newsletter-form');
+    const newsletterMessage = document.getElementById('newsletter-message');
+
+    newsletterForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById('newsletter-email').value;
+        const data = {
+            formType: 'Newsletter Subscription',
+            email: email
+        };
+
+        // Show loading state
+        const submitButton = newsletterForm.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        submitButton.textContent = 'Subscribing...';
+        submitButton.disabled = true;
+
+        try {
+            const response = await fetch(GOOGLE_SHEETS_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+
+            // Show success message
+            newsletterMessage.textContent = '🎉 Success! You\'re subscribed. Check your email for your 10% discount code!';
+            newsletterMessage.className = 'mt-4 p-4 rounded-lg bg-green-100 text-green-800 border border-green-300';
+            newsletterMessage.classList.remove('hidden');
+
+            // Reset form
+            newsletterForm.reset();
+
+            // Hide message after 7 seconds
+            setTimeout(() => {
+                newsletterMessage.classList.add('hidden');
+            }, 7000);
+
+        } catch (error) {
+            // Show error message
+            newsletterMessage.textContent = 'Oops! Something went wrong. Please try again.';
+            newsletterMessage.className = 'mt-4 p-4 rounded-lg bg-red-100 text-red-800 border border-red-300';
+            newsletterMessage.classList.remove('hidden');
+
+            console.error('Newsletter subscription error:', error);
+        } finally {
+            // Reset button
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        }
+    });
+</script>
