@@ -11,6 +11,7 @@ import logo5 from '../assets/images/logos/logoipsum-352.svg';
 export interface Logo {
     src: ImageMetadata;
     alt: string; // The partner company's name
+    url?: string; // Company website or LinkedIn URL
 }
 
 export interface LogoList {
@@ -25,15 +26,18 @@ export const logoLists: Record<string, LogoList> = {
         logos: [
             {
                 src: logo1,
-                alt: 'Celestial Lithium',
+                alt: 'Celestial Lithium Pvt. Ltd.',
+                url: 'https://www.linkedin.com/company/celestial-lithium-pvt-ltd/'
             },
             {
                 src: logo2,
                 alt: 'Unmanned Dynamics',
+                url: 'https://www.unmanned-dynamics.com/'
             },
             {
                 src: logo3,
                 alt: 'Shah Business Ventures',
+                url: 'https://www.linkedin.com/company/shah-business-ventures-privatelimited/'
             },
         ],
     },

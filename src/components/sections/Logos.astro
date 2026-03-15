@@ -43,18 +43,36 @@ const paddingClass = getPaddingClass({
         )}
         <div class="flex flex-wrap justify-center gap-16">
             {logos.map((logo, index) => (
-                <div 
+                <div
                     class="logo-wrapper flex justify-center items-center w-32 h-20"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                 >
-                    <Image 
-                        src={logo.src} 
-                        alt={logo.alt}
-                        class="h-8 md:h-10 w-auto transition-all duration-300 object-contain object-center filter grayscale hover:grayscale-0 opacity-75 hover:opacity-100"
-                        width={200}
-                        height={80}
-                    />
+                    {logo.url ? (
+                        <a
+                            href={logo.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="block h-full w-full flex items-center justify-center"
+                            aria-label={`Visit ${logo.alt} website`}
+                        >
+                            <Image
+                                src={logo.src}
+                                alt={logo.alt}
+                                class="h-8 md:h-10 w-auto transition-all duration-300 object-contain object-center filter grayscale hover:grayscale-0 opacity-75 hover:opacity-100 cursor-pointer"
+                                width={200}
+                                height={80}
+                            />
+                        </a>
+                    ) : (
+                        <Image
+                            src={logo.src}
+                            alt={logo.alt}
+                            class="h-8 md:h-10 w-auto transition-all duration-300 object-contain object-center filter grayscale hover:grayscale-0 opacity-75 hover:opacity-100"
+                            width={200}
+                            height={80}
+                        />
+                    )}
                 </div>
             ))}
         </div>
